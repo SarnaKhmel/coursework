@@ -21,15 +21,16 @@ class UserController extends Controller
         if (Auth::check()){
             $id = Auth::id();
             $data = User::where('id', $id)->get()->toArray();
-            return view('Shop.UserStore.user',['data'=>$data]);
+            return view('Shop.UserStore.UserInfo',['data'=>$data]);
         }
         return "Error, ";
         }
 
+
         public function showCreate()
         {
         if(Auth::check()){
-            return view('Shop.UserStore.showCreate');
+            return view('Shop.UserStore.Create');
         } else return "Error";
         }
 

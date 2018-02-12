@@ -1,0 +1,8 @@
+.navbar-collapse .navbar-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.dropdown-toggle:after{
+    display: none !important;
+}

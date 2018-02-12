@@ -18,46 +18,7 @@
 
 </head>
 <body>
-<!-- scroll indicator -->
-<div class="header">
-        <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-    </div>
-</div>
-<style>
-    Style the header: fixed position (always stay at the top) */
-    .header {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    background-color: #f1f1f1;
-    }
 
-    /* The progress container (grey background) */
-    .progress-container {
-    width: 100%;
-    height: 8px;
-    background: #ccc;
-    }
-
-    /* The progress bar (scroll indicator) */
-    .progress-bar {
-    height: 8px;
-    background: #4caf50;
-    width: 0%;
-    }
-</style>
-<script>
-    window.onscroll = function() {myFunction()};
-
-    function myFunction() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = scrolled + "%";
-    }
-</script>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -112,9 +73,9 @@
     <style>
         html, body
         {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+            height: 100%; !important;
+            margin: 0; !important;
+            padding: 0; !important;
         }
     </style>
 

@@ -18,10 +18,10 @@ Route::get('/adminUsers', 'AdminController@adminUsers');
 Route::get('/adminCreate', 'AdminController@adminCreate');
 
 // User store
-Route::get('/user', 'userController@showUser');
+Route::get('/user', 'UserController@showUser');
 //Route::any('/returnUserInfo/{id}',['as'=>'return-info', 'uses'=>'userController@returnUserInformation']);
 
-Route::get('create', 'userController@showCreate');
+Route::get('/create', 'UserController@showCreate');
 
 
 // Other store
@@ -31,3 +31,6 @@ Route::get('/about', 'OtherController@showAbout');
 Route::get('/question','OtherController@showAbout');
 
 
+Route::get('/test', function(){
+    return view ('test');
+});
