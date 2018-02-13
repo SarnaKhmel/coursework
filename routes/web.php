@@ -22,6 +22,7 @@ Route::get('/user', 'UserController@showUser');
 //Route::any('/returnUserInfo/{id}',['as'=>'return-info', 'uses'=>'userController@returnUserInformation']);
 
 Route::get('/create', 'UserController@showCreate');
+Route::post('/createNewUserProduct', 'UserController@createNewUserProduct');
 
 
 // Other store

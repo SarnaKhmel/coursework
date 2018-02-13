@@ -16,15 +16,20 @@ class UsersProductsList extends Migration
         Schema::create('users_products_list', function (Blueprint $table) {
             $table->increments('id')->index();
             $table->integer('user_id');
+            $table->string('user_email');
+            $table->string('prodEmail')->nullable();;
             $table->string('name');
             $table->string('subscribe');
+            $table->string('phone')->nullable();
             $table->integer('price');
-            $table->integer('id_image');
-            $table->json('image');
+            $table->string('image')->nullable();
+            //$table->json('image');
 
-            $table->integer('category_id');
-            $table->integer('image_id');
-            $table->integer('location_id');
+            //$table->integer('category_id');
+            //$table->integer('image_id');
+            //$table->integer('location_id');
+            $table->rememberToken();
+            $table->timestamps();
 
         });
     }

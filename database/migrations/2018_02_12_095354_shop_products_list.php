@@ -21,12 +21,13 @@ class ShopProductsList extends Migration
             $table->integer('price');
 
             $table->integer('id_image');
-            $table->json('image');
+           // $table->json('image');
 
             $table->integer('category_id');
-            $table->integer('image_id');
+            //$table->integer('image_id');
             $table->integer('location_id');
-
+            $table->rememberToken();
+            $table->timestamps();
 
         });
     }
