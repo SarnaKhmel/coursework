@@ -5,7 +5,7 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'UserController@showAllInfo');
 
 
 
@@ -22,7 +22,8 @@ Route::get('/user', 'UserController@showUser');
 //Route::any('/returnUserInfo/{id}',['as'=>'return-info', 'uses'=>'userController@returnUserInformation']);
 
 Route::get('/create', 'UserController@showCreate');
-Route::post('/createNewUserProduct', 'UserController@createNewUserProduct');
+//Route::post('/createNewUserProduct', 'UserController@createNewUserProduct')->name('product-save');
+Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'UserController@createNewUserProduct']);
 
 
 // Other store

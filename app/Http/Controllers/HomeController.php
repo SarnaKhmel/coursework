@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use App\Prod;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $dataAllProd = Prod::all()->toArray();
+        return view('home', ['dataAllProd'=> $dataAllProd]);
+       // return view('home');
     }
 }

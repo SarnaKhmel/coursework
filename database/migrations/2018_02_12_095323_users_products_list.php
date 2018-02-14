@@ -13,11 +13,11 @@ class UsersProductsList extends Migration
      */
     public function up()
     {
-        Schema::create('users_products_list', function (Blueprint $table) {
+        Schema::create('prods', function (Blueprint $table) {
             $table->increments('id')->index();
             $table->integer('user_id');
-            $table->string('user_email');
-            $table->string('prodEmail')->nullable();;
+            $table->string('user_email')->nullable();
+            $table->string('prodEmail')->nullable();
             $table->string('name');
             $table->string('subscribe');
             $table->string('phone')->nullable();

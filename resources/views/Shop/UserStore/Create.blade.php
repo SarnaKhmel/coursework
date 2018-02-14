@@ -5,17 +5,19 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card card-default">
-                    <div class="card-header">Add new product</div>
+                    <div class="card-header">Add new product
+                        <button class="pull-right" href="{{ url('/create') }}">To shop</button>
+                    </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ url('createNewUserProduct') }}">
-
+                        <form method="POST" action="{{ route('product-save') }}">
+                            {{csrf_field()}}
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" name="name" value="{{old('prod')}}" >
+                                    <input id="name" name="name" type="text" value="{{old('prod')}}" >
                                 </div>
                             </div>
 
@@ -23,7 +25,7 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" name="email" value="{{old('prod')}}">
+                                    <input id="email" name="email" type="email" value="{{old('prod')}}">
 
                                 </div>
                             </div>
@@ -32,25 +34,23 @@
                                 <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="phone" value="{{old('prod')}}">
+                                    <input id="phone" name="phone" type="text" value="{{old('prod')}}">
 
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
+                                <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
 
                                 <div class="col-md-6">
-                                    <input id="price" type="price" value="{{old('prod')}}">
+                                    <input id="price" name="price" type="text" value="{{old('prod')}}">
 
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                                <label for="subscribe" class="col-md-4 col-form-label text-md-right">Description</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" type="description" value="{{old('prod')}}" ></textarea>
+                                    <textarea id="subscribe" name="subscribe" type="text" value="{{old('prod')}}" ></textarea>
                                 </div>
                             </div>
 
@@ -58,7 +58,7 @@
                                 <label for="images" class="col-md-4 col-form-label text-md-right">Add photo or link</label>
 
                                 <div class="col-md-6">
-                                    <input id="images" type="images" value="{{old('prod')}}">
+                                    <input id="images" type="text" name="images" value="{{old('prod')}}">
                                     <br>
                                     <button class="pull-right" >Add photo</button>
                                 </div>

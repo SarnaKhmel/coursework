@@ -11,7 +11,8 @@ class AdminController extends Controller
     public function showAdminMenu(){
         if(Auth::check()&& Auth::user()->moderator){
             return view('Shop.AdminStore.AdminMenu');
-        } else return view('Shop.OtherStore.AdminMenu');
+        }
+        return view('Shop.OtherStore.AdminMenu');
     }
 
     public function showAdminAdvertisementCustomer()

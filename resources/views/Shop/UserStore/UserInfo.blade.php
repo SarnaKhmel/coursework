@@ -12,28 +12,13 @@
 
 </head>
 <body>
-<style>
-    html, body
-    {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-</style>
-<!-- Main -->
-<section id="main">
-    <div class="inner">
 
-        <!-- One -->
-        <section id="one" class="wrapper style1">
-            <div class="content">
-
-
-                <div class="header">
-                    <h1>User information:</h1>
-                </div>
-                <div class="content">
-
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-default">
+                <div class="card-header">User information</div>
+                <div class="card-body">
                     @foreach($data as $returnUserInfo)
 
                         <div class="panel panel-body">
@@ -48,54 +33,49 @@
                         </div>
 
                     @endforeach
-                    <button type="button" class="btn btn-primary btn-block">Сhange information</button>
-
                 </div>
             </div>
-            <div class="content">
-
-            </div>
-        </section>
-        <!-- Two -->
-        <section id="two" class="wrapper ">
-            <header>
-
-            </header>
-            <div class="content">
-                <div class="gallery">
-
-                </div>
-            </div>
-        </section>
-        <!-- Three -->
-        <section id="two" class="wrapper style2">
-            <a href="{{ url('/addAdvertisement') }}">
-                <button type="button" class="btn btn-primary btn-block">Add advertisement</button>
-            </a>
-            <div class="content">
-                <div class="gallery">
-
-                </div>
-            </div>
-        </section>
-
-        <!--Three-->
-        <section id="three" class="wrapper style2">
-            <header>
-                <button type="button" class="btn btn-primary btn-block">My advertisement</button>
-            </header>
-            <div class="content">
-                <div class="gallery">
-
-                </div>
-            </div>
-
-
-
-        </section>
-
+        </div>
     </div>
-</section>
+</div>
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-default">
+                <div class="card-header">Change information</div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url('changeInfo') }}">
+                    {{csrf_field()}}
+                        <div class="form-group row ">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                            <div class="col-md-6">
+                                <input id="name" type="text" {{old('info')}}>
+                            </div>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                            <div class="col-md-6">
+                                <input id="email" type="email" {{old('info')}}>
+                            </div>
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
+                            <div class="col-md-6">
+                                <input id="phone" type="text" {{old('info')}}>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-block btn-primary">
+                                    Change info
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Footer -->
 <footer id="footer">
