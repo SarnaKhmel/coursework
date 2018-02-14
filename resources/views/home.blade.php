@@ -76,6 +76,7 @@
                                         <li><a href="#all">Anything</a></li>
                                     </ul>
                                     <input type="hidden" name="search_param" value="all" id="search_param">
+                                    <li><a class="week" href="{{ url('/userAdv') }}">My shop</a></li>
                                     <li><a class="week" href="{{ url('/create') }}">Start sell </a></li>
                                 </ul>
                             </div><!-- end navbar-collapse -->
@@ -102,16 +103,14 @@
                             <div class="panel panel-body">
 
                                     <div class="form-group row">
-                                        <div class="col-lg-6">
+                                        <div class="col-sm-6">
                                         <strong><span class="text  ">{{$returnProdInfo['name']}}</span></strong>
                                         </div>
-                                        <div class="col-sm-4 ">
+                                        <div class="col-sm-3 ">
                                         <strong><span class="text ">{{$returnProdInfo['price']}}₴</span></strong>
                                         </div>
-                                        <div class="col-sm-4">
 
-                                        </div>
-                                        <div class="col-sm-2 pull-right">
+                                        <div class="col-sm-3 pull-right">
                                             <button type="button" class="card pull-right">More info</button>
                                         </div>
                                     </div>

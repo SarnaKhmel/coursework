@@ -19,12 +19,13 @@ Route::get('/adminCreate', 'AdminController@adminCreate');
 
 // User store
 Route::get('/user', 'UserController@showUser');
-//Route::any('/returnUserInfo/{id}',['as'=>'return-info', 'uses'=>'userController@returnUserInformation']);
-
 Route::get('/create', 'UserController@showCreate');
-//Route::post('/createNewUserProduct', 'UserController@createNewUserProduct')->name('product-save');
 Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'UserController@createNewUserProduct']);
-
+Route::get('/userAdv', 'UserController@showUserAdv');
+Route::any('/deleteUserAdv/{id}', ['as' => 'delete-prod', 'uses' => 'UserController@removeUserAdv']);
+//Route::get('/edit', 'UserController@edit');
+Route::any('/edit/{id}', ['as'=> 'edit-prod', 'uses' => 'UserController@editUserAdv']);
+Route::any('/updateUserProduct', ['as' => 'product-update', 'uses' => 'UserController@updateUserAdv']);
 
 // Other store
 
