@@ -1,13 +1,9 @@
 <?php
 
 Auth::routes();
-
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', 'UserController@showAllInfo');
-
-
 
 // Admin store
 Route::get('/admin', 'AdminController@showAdminMenu');
@@ -18,14 +14,24 @@ Route::get('/adminUsers', 'AdminController@adminUsers');
 Route::get('/adminCreate', 'AdminController@adminCreate');
 
 // User store
-Route::get('/user', 'UserController@showUser');
-Route::get('/create', 'UserController@showCreate');
-Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'UserController@createNewUserProduct']);
-Route::get('/userAdv', 'UserController@showUserAdv');
-Route::any('/deleteUserAdv/{id}', ['as' => 'delete-prod', 'uses' => 'UserController@removeUserAdv']);
+Route::get('/user', 'UserController@showUser')->name('user');
+Route::post('/updateUserInfo', ['as' => 'user-update', 'uses' => 'UserController@updateUserInfo']);
+
+//  Route::post('');
+
+//Product store
+Route::get('/userAdv', 'ProductController@showUserAdv')->name('userAdv');
+Route::any('/deleteUserAdv/{id}', ['as' => 'delete-prod', 'uses' => 'ProductController@removeUserAdv']);
+Route::get('/edit/{id}', ['as'=> 'edit-prod', 'uses' => 'ProductController@editUserAdv']);
+Route::post('/updateUserProduct', ['as' => 'product-update', 'uses' => 'ProductController@updateUserAdv']);
+Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'ProductController@createNewUserProduct']);
+Route::get('/create', 'ProductController@showCreate');
+Route::get('/home', 'ProductController@showAllInfo');
+Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProcuctController@reviseAdv']);
+
+
 //Route::get('/edit', 'UserController@edit');
-Route::any('/edit/{id}', ['as'=> 'edit-prod', 'uses' => 'UserController@editUserAdv']);
-Route::any('/updateUserProduct', ['as' => 'product-update', 'uses' => 'UserController@updateUserAdv']);
+//Shop product store
 
 // Other store
 
@@ -37,3 +43,8 @@ Route::get('/question','OtherController@showAbout');
 Route::get('/test', function(){
     return view ('test');
 });
+
+
+// Test dataTables
+Route::get('/datatable', ['uses'=>'PostController@datatable']);
+Route::get('datatable/getposts', ['as'=>'datatable.getposts','uses'=>'PostController@getPosts']);

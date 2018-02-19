@@ -6,18 +6,25 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Yajra\DataTables\DataTables;
+
 class AdminController extends Controller
 {
+    public function __construct(){
+
+        $this->middleware('auth');
+    }
+
     public function showAdminMenu(){
-        if(Auth::check()&& Auth::user()->moderator){
+        if(Auth::user()->moderator){
             return view('Shop.AdminStore.AdminMenu');
         }
-        return view('Shop.OtherStore.AdminMenu');
+        return view('Shop.OtherStore.404');
     }
 
     public function showAdminAdvertisementCustomer()
     {
-        if(Auth::check() && Auth::user()->moderator){
+        if(Auth::user()->moderator){
 
             if (Auth::check()){
                 $user_id = Auth::id();
@@ -25,7 +32,7 @@ class AdminController extends Controller
                     ->get()->toArray();
                 return view('tasks',['data'=>$data]);
             }
-            return "Error, ";
+           // return "Error, ";
 
             return view('Shop.AdminStore.adminAdvertisementCustomer');
         } else return view('Shop.OtherStore.404');
@@ -33,23 +40,23 @@ class AdminController extends Controller
 
     public function showAdminAdvertisementShop()
     {
-        if(Auth::check() && Auth::user()->moderator){
+        if(Auth::user()->moderator){
             return view('Shop.AdminStore.adminAdvertisementShop');
         } else return view('Shop.OtherStore.404');
     }
     public function showAdminQuestion()
     {
-        if(Auth::check() && Auth::user()->moderator){
+        if(Auth::user()->moderator){
             return view('Shop.AdminStore.adminQuestion');
         } else return view('Shop.OtherStore.404');
     }
     public function  showAdminUsers(){
-        if(Auth::check() && Auth::user()->moderator){
+        if(Auth::user()->moderator){
             return view('Shop.AdminStore.adminUsers');
         } else return view('Shop.OtherStore.404');
     }
     public function showAdminCreate(){
-        if(Auth::check() && Auth::user()->moderator){
+        if(Auth::user()->moderator){
             return view('Shop.AdminStore.adminCreate');
         }else return view('Shop.OtherStore.404');
     }

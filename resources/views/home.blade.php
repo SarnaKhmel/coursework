@@ -36,7 +36,7 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                                 <ul class="nav navbar-nav trending-menu">
-                                    <li ><a class="week" href="#">News:</a></li>
+                                    <li ><a class="week" href="{{url('/')}}">News:</a></li>
                                     <li><a href="http://rusty.com">Transport</a></li>
                                     <li><a href="http://rusty.com">Apartment </a></li>
                                     <li><a href="http://rusty.com">Clothing & footwear</a></li>
@@ -111,7 +111,7 @@
                                         </div>
 
                                         <div class="col-sm-3 pull-right">
-                                            <button type="button" class="card pull-right">More info</button>
+                                            <a class="btn btn-primary icon fa-ambulance"  href="{{route('revise-prod',['id'=> $returnProdInfo['id']])}}"> More info</a>
                                         </div>
                                     </div>
 

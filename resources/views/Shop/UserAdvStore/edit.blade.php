@@ -8,9 +8,10 @@
                         <button class="pull-right icon fa-arrow-circle-right" href="{{ url('/home') }}">To shop</button>
                         <button class="pull-right icon fa-arrow-circle-right" href="{{ url('/create') }}">New adv</button>
                     </div>
-                        @foreach( $dataEdit as $edit)
+                    @foreach( $dataEdit as $edit)
                         <form method="POST" action="{{route('product-update') }}">
                             {{csrf_field()}}
+                            <input type="hidden" name="id" value="{{$edit['id']}}">
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
@@ -39,7 +40,7 @@
                             <div class="form-group row">
                                 <label for="subscribe" class="col-md-4 col-form-label text-md-right">Description</label>
                                 <div class="col-md-6">
-                                    <textarea id="subscribe" name="subscribe" type="text" value="{{$edit['subscribe']}}"></textarea>
+                                    <textarea id="subscribe" name="subscribe" type="text">{{$edit['subscribe']}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">

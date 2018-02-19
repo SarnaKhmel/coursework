@@ -40,11 +40,8 @@
                                             <strong><span class="text">{{$returnProdInfo['created_at']}}</span></strong>
                                         </div>
                                         <div class="col-sm-3 pull-right">
-                                            <form action="{{route('edit-prod',['id'=> $returnProdInfo['id']])}}" method="get">
-                                                <button class="btn icon fa-ambulance" href="{{'/edit'}}">More info</button>
-                                            </form>
-                                            <form action="{{ route('delete-prod', ['id' => $returnProdInfo['id']]) }}" method="post">                                           <button type="submit" class=" btn icon fa-remove ">Delete</button>
-                                            </form>
+                                          <a class="btn btn-primary icon fa-ambulance"  href="{{route('edit-prod',['id'=> $returnProdInfo['id']])}}"> More info</a>
+                                          <a  class=" btn btn-danger icon fa-remove " href="{{ route('delete-prod', ['id' => $returnProdInfo['id']]) }}">Delete</a>
 
 
 
