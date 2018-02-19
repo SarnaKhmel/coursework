@@ -27,12 +27,6 @@ class UserController extends Controller
             return view('Shop.UserStore.UserInfo', ['data' => $data]);
     }
 
-    public function editUserInfo(Request $request){
-        $id = $request->id;
-        $dataEdit = User::where('id', $id)->get()->toArray();
-        //переписати в колекцію, забрати toArray()
-        return view('Shop.UserStore.UserInfo',['dataEdit'=>$dataEdit]);
-    }
     public function updateUserInfo( Request $request)
     {
         $input = $request->only(

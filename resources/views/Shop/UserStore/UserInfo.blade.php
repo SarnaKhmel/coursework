@@ -45,25 +45,25 @@
             <div class="card card-default">
                 <div class="card-header">Change information</div>
                 <div class="card-body">
-                    @foreach($dataEdit as $edit)
-                            <div class="form-group row ">
+
+                    {{csrf_field()}}
+                        <div class="form-group row ">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" value="{{$edit['name']}}">
+                                <input id="name" type="text" {{old('info')}}>
                             </div>
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
                             <div class="col-md-6">
-                                <input id="email" type="email" value="{{$edit['email']}}">
+                                <input id="email" type="email" {{old('info')}}>
                             </div>
                             <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
                             <div class="col-md-6">
-                                <input id="phone" type="text" value="{{$edit['phone']}}">
+                                <input id="phone" type="text" {{old('info')}}>
                             </div>
                         </div>
-                         <div class="form-group row mb-0">
+                        <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <a  class=" btn btn-danger icon fa-remove " href="{{ route('user-update', ['id' => $edit['id']]) }}">Delete</a>
-                    @endforeach()
+                                <a  class=" btn btn-danger icon fa-remove " href="{{ route('user-update', ['id' => $returnProdInfo['id']]) }}">Delete</a>
                                 <button type="submit" class="btn btn-block btn-primary">
                                     Change info
                                 </button>

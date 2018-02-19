@@ -70,10 +70,10 @@
         </div>
     </footer>
 
-    <!-- Scripts
+    Scripts
     <script src="/resources/assets/js/jquery.min.js"></script>
     <script src="/resources/assets/js/jquery.poptrox.min.js"></script>
     <script src="/resources/assets/js/skel.min.js"></script>
     <script src="/resources/assets/js/util.js"></script>
-    -->
+
 @endsection()
