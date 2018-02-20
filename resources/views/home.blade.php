@@ -111,7 +111,7 @@
                                         </div>
 
                                         <div class="col-sm-3 pull-right">
-                                            <a class="btn btn-primary icon fa-ambulance"  href="{{route('revise-prod',['id'=> $returnProdInfo['id']])}}"> More info</a>
+                                            <a class="btn btn-primary icon fa-question-circle"  href="{{route('revise-prod',['id'=> $returnProdInfo['id']])}}"> More info</a>
                                         </div>
                                     </div>
 

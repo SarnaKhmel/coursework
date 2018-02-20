@@ -17,6 +17,9 @@ Route::get('/adminCreate', 'AdminController@adminCreate');
 Route::get('/user', 'UserController@showUser')->name('user');
 Route::post('/updateUserInfo', ['as' => 'user-update', 'uses' => 'UserController@updateUserInfo']);
 
+//Massages & mail
+Route::post('/send', ['as' => 'send-message', 'uses'=>"MailController@sendMessageAdv"]);
+
 //  Route::post('');
 
 //Product store
@@ -26,9 +29,9 @@ Route::get('/edit/{id}', ['as'=> 'edit-prod', 'uses' => 'ProductController@editU
 Route::post('/updateUserProduct', ['as' => 'product-update', 'uses' => 'ProductController@updateUserAdv']);
 Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'ProductController@createNewUserProduct']);
 Route::get('/create', 'ProductController@showCreate');
-Route::get('/home', 'ProductController@showAllInfo');
-Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProcuctController@reviseAdv']);
-
+Route::get('/home', 'ProductController@showAllInfo')->name('home');
+Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProcuctController@reviseAvd']);
+Route::get('/adv', 'ProductController@showAdv')->name('adv');
 
 //Route::get('/edit', 'UserController@edit');
 //Shop product store
