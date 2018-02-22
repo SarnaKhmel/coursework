@@ -26,8 +26,12 @@ Route::get('/userAdv', 'ProductController@showUserAdv')->name('userAdv');
 Route::any('/deleteUserAdv/{id}', ['as' => 'delete-prod', 'uses' => 'ProductController@removeUserAdv']);
 Route::get('/edit/{id}', ['as'=> 'edit-prod', 'uses' => 'ProductController@editUserAdv']);
 Route::post('/updateUserProduct', ['as' => 'product-update', 'uses' => 'ProductController@updateUserAdv']);
+
 Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'ProductController@createNewUserProduct']);
 Route::get('/create', 'ProductController@showCreate');
+
+
+
 Route::get('/home', 'ProductController@showAllInfo')->name('home');
 Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProcuctController@reviseAvd']);
 Route::get('/adv', 'ProductController@showAdv')->name('adv');
@@ -56,5 +60,5 @@ Route::get('/test', function(){
 
 
 // Test dataTables
-Route::get('/datatable', ['uses'=>'PostController@datatable']);
-Route::get('datatable/getposts', ['as'=>'datatable.getposts','uses'=>'PostController@getPosts']);
+Route::get('image-upload',['as'=>'image.upload','uses'=>'OtherController@imageUpload']);
+Route::post('image-upload',['as'=>'image.upload.post','uses'=>'OtherController@imageUploadPost']);

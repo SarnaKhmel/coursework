@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/css/input.css" />
     <link rel="stylesheet" href="/css/fortest.css" />
+
 
     <div class="container">
         <div class="row justify-content-center">
@@ -13,7 +15,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('product-save') }}">
+                        <form method="POST" action="{{ route('product-save') }}" enctype="multipart/form-data">
                             {{csrf_field()}}
 
                             <div class="form-group row">
@@ -95,8 +97,13 @@
                 <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
         </div>
-        <div class="copyright">
-            &copy; Untitled. All rights reserved. Images <a href="https://unsplash.com">Unsplash</a> Design <a href="https://templated.co">TEMPLATED</a>
+        <div class="container">
+            <ul class="icons">
+                <li><a href="{{route('about')}}"><span class="label">About</span></a></li>
+                <li><a href="{{route('faq')}}"><span class="label">FAQ</span></a></li>
+                <li><a href="{{route('bay')}}"><span class="label">How To Bay</span></a></li>
+                <li><a href="{{route('sell')}}"><span class="label">How To Sell</span></a></li>
+            </ul>
         </div>
     </footer>
 

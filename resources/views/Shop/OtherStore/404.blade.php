@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
@@ -12,8 +11,13 @@
                 <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             </ul>
         </div>
-        <div class="copyright">
-            &copy; Untitled. All rights reserved. Images <a href="https://unsplash.com">Unsplash</a> Design <a href="https://templated.co">TEMPLATED</a>
+        <div class="container">
+            <ul class="icons">
+                <li><a href="{{route('about')}}"><span class="label">About</span></a></li>
+                <li><a href="{{route('faq')}}"><span class="label">FAQ</span></a></li>
+                <li><a href="{{route('bay')}}"><span class="label">How To Bay</span></a></li>
+                <li><a href="{{route('sell')}}"><span class="label">How To Sell</span></a></li>
+            </ul>
         </div>
     </footer>
 
