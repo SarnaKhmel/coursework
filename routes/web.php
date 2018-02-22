@@ -20,7 +20,6 @@ Route::post('/updateUserInfo', ['as' => 'user-update', 'uses' => 'UserController
 //Massages & mail
 Route::post('/send', ['as' => 'send-message', 'uses'=>"MailController@sendMessageAdv"]);
 
-//  Route::post('');
 
 //Product store
 Route::get('/userAdv', 'ProductController@showUserAdv')->name('userAdv');
@@ -32,20 +31,28 @@ Route::get('/create', 'ProductController@showCreate');
 Route::get('/home', 'ProductController@showAllInfo')->name('home');
 Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProcuctController@reviseAvd']);
 Route::get('/adv', 'ProductController@showAdv')->name('adv');
+//Route::get('/adv', 'ProductController');
 
-//Route::get('/edit', 'UserController@edit');
-//Shop product store
+Route::get('/upload', 'UploadController@uploadForm');
+Route::post('/upload', 'UploadController@uploadSubmit');
+
+//Question
+Route::get('/question','OtherController@showQuestion')->name('faq');
+
 
 // Other store
-
 Route::get('/404','OtherController@show404');
-Route::get('/about', 'OtherController@showAbout');
-Route::get('/question','OtherController@showAbout');
+Route::get('/about', 'OtherController@showAbout')->name('about');
 
+Route::get('/howtosell','OtherController@showHowSell')->name('sell');
+Route::get('/howtobay','OtherController@showHowBay')->name('bay');
 
 Route::get('/test', function(){
     return view ('test');
 });
+
+
+
 
 
 // Test dataTables

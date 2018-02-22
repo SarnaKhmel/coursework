@@ -1,0 +1,17 @@
+.files-label input[type="file"]{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    display: flex;
+    justify-content: center;
+}
+.files-label span{
+
+    display: block;
+    font-size: 14px;
+    color: #000000;
+    background-color: #e2e6ea;
+    position: relative;
+    padding-left: 3px;
+}

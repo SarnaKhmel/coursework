@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="/css/input.css" />
+    <link rel="stylesheet" href="/css/fortest.css" />
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -17,48 +20,54 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" name="name" type="text" value="{{old('prod')}}" >
+                                    <input id="name" name="name" type="text"  >
                                 </div>
                             </div>
-
+                            <br>
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" name="email" type="email" value="{{old('prod')}}">
+                                    <input id="email" name="email" type="email" >
 
                                 </div>
                             </div>
-
+                            <br>
                             <div class="form-group row">
                                 <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
 
                                 <div class="col-md-6">
-                                    <input id="phone" name="phone" type="text" value="{{old('prod')}}">
+                                    <input id="phone" name="phone" type="text" >
 
                                 </div>
                             </div>
+                            <br>
                             <div class="form-group row">
                                 <label for="phone" class="col-md-4 col-form-label text-md-right">Price</label>
 
                                 <div class="col-md-6">
-                                    <input id="price" name="price" type="text" value="{{old('prod')}}">
+                                    <input id="price" name="price" type="text" >
 
                                 </div>
                             </div>
+                            <br>
                             <div class="form-group row">
                                 <label for="subscribe" class="col-md-4 col-form-label text-md-right">Description</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="subscribe" name="subscribe" type="text" value="{{old('prod')}}" ></textarea>
+                                    <textarea id="subscribe" name="subscribe" type="text"></textarea>
                                 </div>
                             </div>
+                                <br>
 
                             <div class="form-group row">
                                 <label for="images" class="  col-md-4 col-form-label text-md-right">Add photo</label>
 
-                                <div class="col-md-6">
-                                   <input type="file" class="icon fa-clipboard btn btn-primary pull-right" name="photo" multiple>
+                                <div class=" row col-md-6">
+                                     <label class="files-label">
+                                        <input type="file" class=" btn btn-primary btn-block pull-right" name="images" multiple>
+                                        <span>Drop files</span>
+                                    </label>
                                     <br/>
                                 </div>
                             </div>

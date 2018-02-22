@@ -22,4 +22,12 @@ class OtherController extends Controller
         return view('Shop.OtherStore.About');
         //static page;
     }
+    public function showHowBay(){
+        return view('Shop.OtherStore.HowToBay');
+        //static page;
+    }
+    public function showHowSell(){
+        return view('Shop.OtherStore.HowToSell');
+        //static page;
+    }
 }
