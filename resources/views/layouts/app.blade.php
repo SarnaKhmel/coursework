@@ -18,7 +18,6 @@
 
 </head>
 <body>
-
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -69,7 +68,6 @@
         </main>
     </div>
     <!-- my castom style-->
-
     <style>
         html, body
         {
@@ -78,7 +76,6 @@
             padding: 0; !important;
         }
     </style>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>

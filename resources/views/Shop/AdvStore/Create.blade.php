@@ -15,9 +15,8 @@
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('product-save') }}" enctype="multipart/form-data">
+                        <form method="POST" id="product-save" action="{{ route('product-save') }}" enctype="multipart/form-data">
                             {{csrf_field()}}
-
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
@@ -26,14 +25,14 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="form-group row">
+                                <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
                                 <div class="col-md-6">
                                     <input id="email" name="email" type="email" >
 
                                 </div>
-                            </div>
+                                </div>
                             <br>
                             <div class="form-group row">
                                 <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
@@ -67,13 +66,13 @@
 
                                 <div class=" row col-md-6">
                                      <label class="files-label">
-                                        <input type="file" class=" btn btn-primary btn-block pull-right" name="images" multiple>
+                                        <input type="file" class=" btn btn-primary btn-block pull-right" name="images[]" multiple>
                                         <span>Drop files</span>
                                     </label>
                                     <br/>
                                 </div>
                             </div>
-<br>
+                            <br>
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-block btn-primary">
@@ -108,6 +107,7 @@
     </footer>
 
     <!-- Scripts -->
+
     <script src="/resources/assets/js/jquery.min.js"></script>
     <script src="/resources/assets/js/jquery.poptrox.min.js"></script>
     <script src="/resources/assets/js/skel.min.js"></script>

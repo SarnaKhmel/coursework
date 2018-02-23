@@ -60,5 +60,14 @@ Route::get('/test', function(){
 
 
 // Test dataTables
-Route::get('image-upload',['as'=>'image.upload','uses'=>'OtherController@imageUpload']);
-Route::post('image-upload',['as'=>'image.upload.post','uses'=>'OtherController@imageUploadPost']);
+
+
+Route::post('route-to-post', function()
+{
+    $files = \Input::file('files');
+    $output = "";
+    foreach ($files as $file) {
+        $output .= $file->getClientOriginalName();
+    }
+    return $output;
+});
