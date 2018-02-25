@@ -11,7 +11,7 @@
                                 Product info:
                             </div>
                             <div class="card-body">
-
+                            
 
                             </div>
                         </div><br>
@@ -84,9 +84,9 @@
         </footer>
 
         <!-- Scripts -->
-        <script src="/resources/assets/js/jquery.min.js"></script>
-        <script src="/resources/assets/js/jquery.poptrox.min.js"></script>
-        <script src="/resources/assets/js/skel.min.js"></script>
-        <script src="/resources/assets/js/util.js"></script>
-        <script src="/resources/assets/js/main.js"></script>
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/jquery.poptrox.min.js"></script>
+    <script src="/public/js/skel.min.js"></script>
+    <script src="/public/js/util.js"></script>
+    <script src="/public/js/main.js"></script>
     @endsection()

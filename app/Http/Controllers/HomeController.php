@@ -28,6 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $dataAllProd = Prod::all()->toArray();
+        dd($dataAllProd);
         return view('home', ['dataAllProd'=> $dataAllProd]);
        // return view('home');
     }

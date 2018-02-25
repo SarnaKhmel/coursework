@@ -1,8 +1,18 @@
 @extends('layouts.app')
 @section('content')
-    <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/css/input.css" />
-    <link rel="stylesheet" href="/css/fortest.css" />
+    <link rel="stylesheet" href="/css/fortest.css" />-->
+    <link rel="stylesheet" href="/css/basic.css"/>
+    <link rel="stylesheet" href="/css/dropzone.css"/>
+
+    <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
+    <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
+
+    <link rel="stylesheet" href="{{ asset('css/dropzone.min.css') }}">
+    <script src="{{ asset('js/dropzone.js') }}"></script>
 
 
     <div class="container">
@@ -65,10 +75,10 @@
                                 <label for="images" class="  col-md-4 col-form-label text-md-right">Add photo</label>
 
                                 <div class=" row col-md-6">
-                                     <label class="files-label">
-                                        <input type="file" class=" btn btn-primary btn-block pull-right" name="images[]" multiple>
-                                        <span>Drop files</span>
-                                    </label>
+
+                                        <input type="file"  id="my-awesome-dropzone" class="dropzone pull-right" name="images[]" multiple>
+
+
                                     <br/>
                                 </div>
                             </div>
@@ -81,6 +91,7 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -107,11 +118,16 @@
     </footer>
 
     <!-- Scripts -->
-
-    <script src="/resources/assets/js/jquery.min.js"></script>
-    <script src="/resources/assets/js/jquery.poptrox.min.js"></script>
-    <script src="/resources/assets/js/skel.min.js"></script>
-    <script src="/resources/assets/js/util.js"></script>
-    <script src="/resources/assets/js/main.js"></script>
+    <script type="text/javascript">
+        Dropzone.options.imageUpload = {
+            maxFilesize         :       1,
+            acceptedFiles: ".jpeg,.jpg,.png,.gif"
+        };
+    </script>
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/jquery.poptrox.min.js"></script>
+    <script src="/public/js/skel.min.js"></script>
+    <script src="/public/js/util.js"></script>
+    <script src="/public/js/main.js"></script>
 
 @endsection

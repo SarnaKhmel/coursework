@@ -33,7 +33,7 @@ Route::get('/create', 'ProductController@showCreate');
 
 
 Route::get('/home', 'ProductController@showAllInfo')->name('home');
-Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProcuctController@reviseAvd']);
+Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProductController@reviseAvd']);
 Route::get('/adv', 'ProductController@showAdv')->name('adv');
 //Route::get('/adv', 'ProductController');
 
