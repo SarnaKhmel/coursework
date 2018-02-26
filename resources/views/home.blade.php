@@ -2,6 +2,13 @@
 
 @section('content')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/fortest.css" />
 
@@ -24,7 +31,6 @@
                 <div class="row">
                     <nav class="navbar navbar-default">
                         <div class="container trending">
-                            <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
                                     <span class="sr-only">Toggle navigation</span>
@@ -43,9 +49,12 @@
                                     <li><a href="http://rusty.com">Toys</a></li>
                                     <li><a href="#">Free</a></li>
                                     <li><a href="#">Animals</a></li>
-                                    <button type="button" class="btn btn-default dropdown-toggle pull-right" data-toggle="dropdown">
-                                        <span id="search_concept2">Select location</span> <span class=""></span>
-                                    </button>
+                                    <li><a class="week" href="{{ url('/userAdv') }}">My shop</a></li>
+                                    <li><a class="week" href="{{ url('/create') }}">Start sell </a></li>
+
+                                    <a  class=" week dropdown-toggle pull-right" data-toggle="dropdown">
+                                        Location <span id="search_concept2"></span>
+                                    </a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="#">Cherkasy Oblast</a></li>
                                         <li><a href="#">Chernihiv Oblast</a></li>
@@ -56,7 +65,7 @@
                                         <li><a href="#">Kharkiv Oblast</a></li>
                                         <li><a href="#">Kherson Oblast </a></li>
                                         <li><a href="#">Khmelnytskyi Oblast  </a></li>
-                                        <li><a href="#">Kiev Oblast</a></li>
+                                        <li><a href="#"><strong>Kiev Oblast</strong></a></li>
                                         <li><a href="#">Kirovohrad Oblast</a></li>
                                         <li><a href="#">Luhansk Oblast</a></li>
                                         <li><a href="#">Lviv Oblast </a></li>
@@ -76,8 +85,7 @@
                                         <li><a href="#all">Anything</a></li>
                                     </ul>
                                     <input type="hidden" name="search_param" value="all" id="search_param">
-                                    <li><a class="week" href="{{ url('/userAdv') }}">My shop</a></li>
-                                    <li><a class="week" href="{{ url('/create') }}">Start sell </a></li>
+
                                 </ul>
                             </div><!-- end navbar-collapse -->
                         </div><!-- end container-->
@@ -118,7 +126,15 @@
 
                                     <div class="form-group row">
                                         <div class="col-sm-4">
-                                            <strong><span class="fa-file"></span> </strong>
+                                            <strong><span class="image">
+
+                                                  @foreach( json_decode($returnProdInfo['images']) as $image)
+                                                   <div>
+                                                       <img src="{{asset('/pictures/'.$image)}}">
+                                                   </div>
+                                                  @endforeach
+
+                                               </span> </strong>
                                         </div>
                                         <div class="col-sm-3">
                                         <strong><span class="text  ">{{$returnProdInfo['name']}}</span></strong>
@@ -144,9 +160,6 @@
             </div>
         </div>
     </div>
-
-
-
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
@@ -166,12 +179,18 @@
             </ul>
         </div>
     </footer>
-
     <!-- Scripts -->
-    <script src="/resources/assets/js/jquery.min.js"></script>
-    <script src="/resources/assets/js/jquery.poptrox.min.js"></script>
-    <script src="/resources/assets/js/skel.min.js"></script>
-    <script src="/resources/assets/js/util.js"></script>
-    <script src="/resources/assets/js/main.js"></script>
+    <script>
+        $('.fade').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 
- @endsection()
+@endsection()

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -89,4 +91,6 @@
     <script src="/public/js/skel.min.js"></script>
     <script src="/public/js/util.js"></script>
     <script src="/public/js/main.js"></script>
-    @endsection()
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
+
+@endsection()
