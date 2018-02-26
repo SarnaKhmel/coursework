@@ -95,7 +95,21 @@
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">
+                        <div class="form-group row">
+                            <div class="col-sm-4">
+                                <strong><span>Image</span></strong>
+                            </div>
+                            <div class="col-sm-3">
+                                <strong><span class="text  ">Name</span></strong>
+                            </div>
+                            <div class="col-sm-3 ">
+                                <strong><span class="text ">Price ₴</span></strong>
+                            </div>
 
+                            <div class="col-sm-2 pull-right">
+
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">
@@ -103,14 +117,17 @@
                             <div class="panel panel-body">
 
                                     <div class="form-group row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
+                                            <strong><span class="fa-file"></span> </strong>
+                                        </div>
+                                        <div class="col-sm-3">
                                         <strong><span class="text  ">{{$returnProdInfo['name']}}</span></strong>
                                         </div>
                                         <div class="col-sm-3 ">
                                         <strong><span class="text ">{{$returnProdInfo['price']}}₴</span></strong>
                                         </div>
 
-                                        <div class="col-sm-3 pull-right">
+                                        <div class="col-sm-2 pull-right">
                                             <a class="btn btn-primary icon fa-question-circle"  href="{{route('revise-prod',['id'=> $returnProdInfo['id']])}}"> More info</a>
                                         </div>
                                     </div>

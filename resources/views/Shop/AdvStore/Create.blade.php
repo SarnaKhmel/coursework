@@ -3,16 +3,10 @@
     <!--<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/css/input.css" />
     <link rel="stylesheet" href="/css/fortest.css" />-->
-    <link rel="stylesheet" href="/css/basic.css"/>
-    <link rel="stylesheet" href="/css/dropzone.css"/>
-
-    <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
-    <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
+    <script src="{{ asset('assets/js/dropzone.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/dropzone.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
-
-    <link rel="stylesheet" href="{{ asset('css/dropzone.min.css') }}">
-    <script src="{{ asset('js/dropzone.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 
 
     <div class="container">
@@ -91,6 +85,18 @@
                                 </div>
                             </div>
                         </form>
+
+
+
+                        <div class="container">
+                            <div class="dropzone" id="dropzoneFileUpload">
+                            </div>
+                        </div>
+
+
+
+
+
 
                     </div>
                 </div>

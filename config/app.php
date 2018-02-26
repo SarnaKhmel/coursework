@@ -146,6 +146,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Telegram\Bot\Laravel\TelegramServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -212,6 +214,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Datatables' => 'Yajra\Datatables\Facades\Datatables',
+
+        'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class,
 
     ],
 

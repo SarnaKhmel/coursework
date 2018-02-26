@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="/css/dropzone.css"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="Laravel Telegram Chat Bot Tutorial and Live Demo. Send messages from browser to Telegram group.">
+
+    <meta property="fb:app_id" content="356607781215457" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Laravel Telegram Chat Bot Live Demo | Codingo Tuts">
+    <meta property="og:description" content="Laravel Telegram Chat Bot Tutorial and Live Demo. Send messages from browser to Telegram group.">
+    <meta property="og:url" content="https://demo2.codingo.me/">
+    <meta property="og:image" content="https://tuts.codingo.me/wp-content/uploads/2015/07/telegram-messenger-800x405.jpg">
+    <meta property="og:site_name" content="Codingo Demo">
+    <meta property="og:image:type" content="image/png">
+    <meta property="article:author" content="https://www.facebook.com/ivanradunovic" />
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -79,6 +91,24 @@
         }
     </style>
     <!-- Scripts -->
+    <script>
+        (function () {
+            'use strict';
+
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement('style')
+                msViewportStyle.appendChild(
+                    document.createTextNode(
+                        '@-ms-viewport{width:auto!important}'
+                    )
+                )
+                document.querySelector('head').appendChild(msViewportStyle)
+            }
+
+        })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery.poptrox.min.js') }}"></script>

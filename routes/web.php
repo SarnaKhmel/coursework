@@ -51,23 +51,11 @@ Route::get('/about', 'OtherController@showAbout')->name('about');
 Route::get('/howtosell','OtherController@showHowSell')->name('sell');
 Route::get('/howtobay','OtherController@showHowBay')->name('bay');
 
-Route::get('/test', function(){
-    return view ('test');
-});
+
+//Telegram
+Route::get('/TelegramHome', 'TelegramController@getHome');
+Route::get('get-updates',   'TelegramController@getUpdates');
+Route::get('send',  'TelegramController@getSendMessage');
+Route::post('send', 'TelegramController@postSendMessage');
 
 
-
-
-
-// Test dataTables
-
-
-Route::post('route-to-post', function()
-{
-    $files = \Input::file('files');
-    $output = "";
-    foreach ($files as $file) {
-        $output .= $file->getClientOriginalName();
-    }
-    return $output;
-});
