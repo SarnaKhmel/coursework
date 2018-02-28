@@ -2,6 +2,33 @@
 
 @section('content')
 
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="form-group row">
+                            <div class="col-lg-8 col-md-4 col-sm-2 center ">
+                                <strong><span>About.</span></strong>
+                                <div class="form-group row">
+                                    <label for="phone" class="col-md-4 col-form-label text-md-right">About project</label>
+
+
+                                    <div class="col-md-6">
+
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer id="footer">
         <div class="container">

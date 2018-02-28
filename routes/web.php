@@ -20,7 +20,6 @@ Route::post('/updateUserInfo', ['as' => 'user-update', 'uses' => 'UserController
 //Massages & mail
 Route::post('/send', ['as' => 'send-message', 'uses'=>"MailController@sendMessageAdv"]);
 
-
 //Product store
 Route::get('/userAdv', 'ProductController@showUserAdv')->name('userAdv');
 Route::any('/deleteUserAdv/{id}', ['as' => 'delete-prod', 'uses' => 'ProductController@removeUserAdv']);
@@ -30,19 +29,16 @@ Route::post('/updateUserProduct', ['as' => 'product-update', 'uses' => 'ProductC
 Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'ProductController@createNewUserProduct']);
 Route::get('/create', 'ProductController@showCreate');
 
-
-
 Route::get('/home', 'ProductController@showAllInfo')->name('home');
 Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProductController@reviseAvd']);
 Route::get('/adv', 'ProductController@showAdv')->name('adv');
-//Route::get('/adv', 'ProductController');
 
 Route::get('/upload', 'UploadController@uploadForm');
 Route::post('/upload', 'UploadController@uploadSubmit');
 
 //Question
 Route::get('/question','OtherController@showQuestion')->name('faq');
-
+Route::post('/back-write',[ 'as' =>'back-write', 'uses'=>'OtherController@BackWrite']);
 
 // Other store
 Route::get('/404','OtherController@show404');

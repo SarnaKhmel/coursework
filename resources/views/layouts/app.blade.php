@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.css">
     <link rel="stylesheet" href="/css/basic.css"/>
     <link rel="stylesheet" href="/css/dropzone.css"/>
     <!-- CSRF Token -->
@@ -88,6 +89,7 @@
             height: 100%; !important;
             margin: 0; !important;
             padding: 0; !important;
+
         }
     </style>
     <!-- Scripts -->
@@ -115,5 +117,6 @@
     <script src="{{ asset('js/skel.min.js') }}"></script>
     <script src="{{ asset('js/util.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.js"></script>
 </body>
 </html>

@@ -1,7 +1,43 @@
 @extends('layouts.app')
-
 @section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <div class="card card-default">
+                                <div class="card-header">
+                                    <strong>Write to the manager:</strong>
+                                </div>
+                                <div class="card-body">
+                                    <form method="POST" id="back-write" action="{{ route('back-write') }}">
+                                        {{csrf_field()}}
+                                    <div class="form-group row">
+                                        <label for="email" class="col-md-2 col-form-label text-md-right">Email</label>
+                                        <div class="col-md-10">
+                                            <input id="email" name="email" type="email"  >
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group row">
+                                        <label for="message" class="col-md-2 col-form-label text-md-right">Message</label>
+                                        <div class="col-md-10">
+                                            <textarea id="subscribe" name="subscribe" type="text" ></textarea><br>
+                                            <button type="submit" class="pull-right btn btn-success icon fa-send-o"> Send message</button>
+                                        </div>
+                                    </div>
+                                    </form>
 
+
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer id="footer">
         <div class="container">

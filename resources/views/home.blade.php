@@ -130,7 +130,7 @@
 
                                                   @foreach( json_decode($returnProdInfo['images']) as $image)
                                                    <div>
-                                                       <img src="{{asset('/pictures/'.$image)}}">
+                                                  <img src="{{asset('/pictures/'.$image)}}" style="max-width: 150px">
                                                    </div>
                                                   @endforeach
 

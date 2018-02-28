@@ -1,24 +1,20 @@
 @extends('layouts.app')
 @section('content')
-    <!--<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/input.css" />
-    <link rel="stylesheet" href="/css/fortest.css" />-->
-    <script src="{{ asset('assets/js/dropzone.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('assets/css/dropzone.css') }}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card card-default">
-                    <div class="card-header">Add new product
-                        <button class="pull-right icon fa-arrow-circle-right" href="{{ url('/home') }}">To shop</button>
-                        <button class="pull-right icon fa-arrow-circle-right" href="{{ url('/create') }}">New adv</button>
+                    <div class="card-header"><strong>Add new product</strong>
+                        <a class="pull-right icon fa-home" href="{{route('home')}}">Home</a>
+                        <a class="pull-right icon fa-user" href="{{route('user')}}">User</a>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body col-lg-10">
                         <form method="POST" id="product-save" action="{{ route('product-save') }}" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-group row">
@@ -29,26 +25,26 @@
                                 </div>
                             </div>
                             <br>
-                                <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                            <!--      <div class="form-group row">
+                              <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
-                                <div class="col-md-6">
-                                    <input id="email" name="email" type="email" >
+                         <<div class="col-md-6">
+                                  <input id="email" name="email" type="email" >
 
-                                </div>
-                                </div>
-                            <br>
+                              </div>
+                              </div>
+                          <br>
+                          <div class="form-group row">
+                              <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
+
+                              <div class="col-md-6">
+                                  <input id="phone" name="phone" type="text" >
+
+                              </div>
+                          </div>
+                          <br> -->
                             <div class="form-group row">
-                                <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
-
-                                <div class="col-md-6">
-                                    <input id="phone" name="phone" type="text" >
-
-                                </div>
-                            </div>
-                            <br>
-                            <div class="form-group row">
-                                <label for="phone" class="col-md-4 col-form-label text-md-right">Price</label>
+                                <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
 
                                 <div class="col-md-6">
                                     <input id="price" name="price" type="text" >
@@ -86,18 +82,11 @@
                             </div>
                         </form>
 
+                        <form action="/file-upload"
+                              class="dropzone"
+                              id="my-awesome-dropzone">
 
-
-                        <div class="container">
-                            <div class="dropzone" id="dropzoneFileUpload">
-                            </div>
-                        </div>
-
-
-
-
-
-
+                        </form>
                     </div>
                 </div>
             </div>
@@ -124,16 +113,4 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="text/javascript">
-        Dropzone.options.imageUpload = {
-            maxFilesize         :       1,
-            acceptedFiles: ".jpeg,.jpg,.png,.gif"
-        };
-    </script>
-    <script src="/public/js/jquery.min.js"></script>
-    <script src="/public/js/jquery.poptrox.min.js"></script>
-    <script src="/public/js/skel.min.js"></script>
-    <script src="/public/js/util.js"></script>
-    <script src="/public/js/main.js"></script>
-
 @endsection

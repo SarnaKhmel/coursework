@@ -148,6 +148,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -217,6 +219,7 @@ return [
 
         'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class,
 
+        'Image' => 'Intervention\Image\Facades\Image'
     ],
 
 ];

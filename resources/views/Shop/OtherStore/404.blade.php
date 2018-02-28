@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="form-group row">
+                            <div class="col-lg-8 col-md-4 col-sm-2 center ">
+                                <strong><span>Sorry. Something wrong.</span></strong>
+                                <img  src="{{asset('/images/404.png')}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
