@@ -36,22 +36,36 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     SarnaShop
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
+
+
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item dropdown">
+                            <a class="btn b nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @lang('localization.language') <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'en' ]) }}"> @lang('localization.en') </a>
+                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'uk' ]) }}"> @lang('localization.uk') </a>
+                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'pl' ]) }}"> @lang('localization.pl') </a>
+                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'ru' ]) }}"> @lang('localization.ru') </a>
+                            </div>
+                        </li>
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+
+               <!-- Authentication Links -->
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>

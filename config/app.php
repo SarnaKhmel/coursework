@@ -150,6 +150,9 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+
+
 
         /*
          * Package Service Providers...
@@ -219,7 +222,10 @@ return [
 
         'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class,
 
-        'Image' => 'Intervention\Image\Facades\Image'
+        'Image' => 'Intervention\Image\Facades\Image',
+
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+
     ],
 
 ];

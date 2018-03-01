@@ -3,15 +3,14 @@
 
     <link rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.css" >
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card card-default">
                     <div class="card-header"><strong>Add new product</strong>
-                        <a class="pull-right icon fa-home" href="{{route('home')}}">Home</a>
-                        <a class="pull-right icon fa-user" href="{{route('user')}}">User</a>
+                        <a class="btn btn-light pull-right icon fa-home" href="{{route('home')}}">Home</a>
+                        <a class="btn btn-light pull-right icon fa-user" href="{{route('user')}}">User</a>
                     </div>
 
                     <div class="card-body col-lg-10">
@@ -64,11 +63,8 @@
                             <div class="form-group row">
                                 <label for="images" class="  col-md-4 col-form-label text-md-right">Add photo</label>
 
-                                <div class=" row col-md-6">
-
-                                        <input type="file"  id="my-awesome-dropzone" class="dropzone pull-right" name="images[]" multiple>
-
-
+                                <div class=" row col-md-5">
+                                  <input type="file"  id="my-dropzone" class="dropzone pull-right" name="images[]" multiple>
                                     <br/>
                                 </div>
                             </div>
@@ -80,12 +76,6 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
-
-                        <form action="/file-upload"
-                              class="dropzone"
-                              id="my-awesome-dropzone">
-
                         </form>
                     </div>
                 </div>
@@ -113,4 +103,22 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
+    <script>
+        Dropzone.options.myDropzone = {
+            paramName: 'file',
+            maxFilesize: 5,
+            maxFiles: 15,
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+            init: function() {
+                this.on("success", function(file, response) {
+                    var a = document.createElement('span');
+                    a.className = "thumb-url btn btn-primary";
+                    a.setAttribute('data-clipboard-text','{{url('/uploads')}}'+'/'+response);
+                    a.innerHTML = "copy url";
+                    file.previewTemplate.appendChild(a);
+                });
+            }
+        };
+    </script>
 @endsection

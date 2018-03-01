@@ -105,13 +105,13 @@
                     <div class="card-header">
                         <div class="form-group row">
                             <div class="col-sm-4">
-                                <strong><span>Image</span></strong>
+                                <strong><span>@lang('localization.image')</span></strong>
                             </div>
                             <div class="col-sm-3">
-                                <strong><span class="text  ">Name</span></strong>
+                                <strong><span class="text  ">@lang('localization.nameProd')</span></strong>
                             </div>
                             <div class="col-sm-3 ">
-                                <strong><span class="text ">Price ₴</span></strong>
+                                <strong><span class="text ">@lang('localization.price') ₴</span></strong>
                             </div>
 
                             <div class="col-sm-2 pull-right">
@@ -126,15 +126,13 @@
 
                                     <div class="form-group row">
                                         <div class="col-sm-4">
-                                            <strong><span class="image">
-
+                                         <span class="image">
                                                   @foreach( json_decode($returnProdInfo['images']) as $image)
                                                    <div>
                                                   <img src="{{asset('/pictures/'.$image)}}" style="max-width: 150px">
                                                    </div>
                                                   @endforeach
-
-                                               </span> </strong>
+                                               </span>
                                         </div>
                                         <div class="col-sm-3">
                                         <strong><span class="text  ">{{$returnProdInfo['name']}}</span></strong>
@@ -142,7 +140,6 @@
                                         <div class="col-sm-3 ">
                                         <strong><span class="text ">{{$returnProdInfo['price']}}₴</span></strong>
                                         </div>
-
                                         <div class="col-sm-2 pull-right">
                                             <a class="btn btn-primary icon fa-question-circle"  href="{{route('revise-prod',['id'=> $returnProdInfo['id']])}}"> More info</a>
                                         </div>

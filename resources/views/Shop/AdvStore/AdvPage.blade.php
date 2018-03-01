@@ -8,12 +8,23 @@
                 <div class="form-group row">
                     <div class="col-lg-8">
                         <div class="card card-default">
-<!--Product-->
+    <!--Product-->
+                            @foreach( $dataAdv as $prod)
                             <div class="card-header">
-                                Product info:
+                               <strong>Product info:{{$prod['name']}}</strong>
                             </div>
                             <div class="card-body">
-                            
+                                    @foreach( json_decode($prod['images']) as $image)
+                                        <div>
+                                            <img src="{{asset('/pictures/'.$image)}}" style="max-width: 700px">
+                                        </div>
+                                    @endforeach
+                                      <hr>
+                                        <div class="clr">
+                                            {{$prod['subscribe']}}
+                                        </div>
+
+                                @endforeach
 
                             </div>
                         </div><br>
