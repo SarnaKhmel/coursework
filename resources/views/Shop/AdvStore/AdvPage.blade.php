@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
+    {{--<link rel="stylesheet" href="/css/lazy-load.css" />--}}
+    {{--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>--}}
+    {{--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>--}}
 
     <div class="container">
         <div class="row justify-content-center">
@@ -13,16 +15,25 @@
                             <div class="card-header">
                                <strong>Product info:{{$prod['name']}}</strong>
                             </div>
+
                             <div class="card-body">
-                                    @foreach( json_decode($prod['images']) as $image)
-                                        <div>
-                                            <img src="{{asset('/pictures/'.$image)}}" style="max-width: 700px">
-                                        </div>
+                                <div class="ct-header ct-header--slider ct-slick-custom-dots" id="home">
+                                    <div class="ct-slick-homepage" data-arrows="true" data-autoplay="true">
+
+                                        @foreach( json_decode($prod['images']) as $image)
+                                                 <div class="ct-header tablex">
+                                                     <img src="{{asset('/pictures/'.$image)}}" style="max-width: 700px">
+                                                     <hr>
+                                                     <div class="clr">
+                                                         {{$prod['subscribe']}}
+                                                     </div>
+                                                     <hr>
+                                                 </div>
                                     @endforeach
-                                      <hr>
-                                        <div class="clr">
-                                            {{$prod['subscribe']}}
-                                        </div>
+
+                               </div>
+                             </div>
+
 
                                 @endforeach
 
@@ -36,10 +47,10 @@
                             <div class="card-body">
 
                                 <div class="form-group row">
-                                    <label for="message" class="col-md-2 col-form-label text-md-right">Message</label>
+                                    <label for="message" class="col-md-2 col-form-label text-md-right">@lang('localization.Message')</label>
                                     <div class="col-md-10">
                                         <textarea id="subscribe" name="subscribe" type="text" ></textarea><br>
-                                        <button type="submit" class="pull-right btn btn-success icon fa-send-o"> Send message</button>
+                                        <button type="submit" class="pull-right btn btn-success icon fa-send-o"> @lang('localization.Send message')</button>
                                     </div>
 
                                 </div>
@@ -97,11 +108,13 @@
         </footer>
 
         <!-- Scripts -->
+    {{--<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>--}}
     <script src="/public/js/jquery.min.js"></script>
     <script src="/public/js/jquery.poptrox.min.js"></script>
     <script src="/public/js/skel.min.js"></script>
     <script src="/public/js/util.js"></script>
     <script src="/public/js/main.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
+    {{--<script src="{{ asset('js/lazy-load.js') }}"></script>--}}
+
 
 @endsection()

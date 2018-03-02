@@ -29,7 +29,7 @@ Route::group(
         Route::post('/updateUserProduct', ['as' => 'product-update', 'uses' => 'ProductController@updateUserAdv']);
 
         Route::any('/createNewUserProduct', ['as' => 'product-save', 'uses' => 'ProductController@createNewUserProduct']);
-        Route::get('/create', 'ProductController@showCreate');
+        Route::get('/create', 'ProductController@showCreate')->name('create');
 
         Route::get('/home', 'ProductController@showAllInfo')->name('home');
         Route::get('/revise/{id}', ['as'=>'revise-prod', 'uses'=>'ProductController@reviseAvd']);
@@ -57,19 +57,14 @@ Route::group(
         Route::get('send',  'TelegramController@getSendMessage');
         Route::post('send', 'TelegramController@postSendMessage');
 
-    });
-
-
-
-
 // Admin store
-Route::get('/admin', 'AdminController@showAdminMenu');
-Route::get('/adminAdvertisementCustomer', 'AdminController@showAdminAdvertisementCustomer');
-Route::get('/adminAdvertisementShop', 'AdminController@showAdminAdvertisementShop');
-Route::get('/adminQuestion', 'AdminController@adminQuestion');
-Route::get('/adminUsers', 'AdminController@adminUsers');
-Route::get('/adminCreate', 'AdminController@adminCreate');
+        Route::get('/admin', 'AdminController@showAdminMenu')->name('adminMenu');
+        Route::get('/adminAdvertisementCustomer', 'AdminController@showAdminAdvertisementCustomer')->name('adminUserAdv');
+        Route::get('/adminAdvertisementShop', 'AdminController@showAdminAdvertisementShop')->name('adminShopAdv');
+        Route::get('/adminQuestion', 'AdminController@showAdminQuestion')->name('adminQuestions');
+        Route::get('/adminUsers', 'AdminController@adminUsers')->name('adminUsers');
+        Route::get('/adminCreate', 'AdminController@showAdminCreate')->name('adminCreate');
 
-
+});
 
 

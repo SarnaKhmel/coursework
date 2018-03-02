@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.css">
-    <link rel="stylesheet" href="/css/basic.css"/>
-    <link rel="stylesheet" href="/css/dropzone.css"/>
+    {{--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.css">--}}
+    {{--<link rel="stylesheet" href="/public/css/basic.css"/>--}}
+    <link rel="stylesheet" href="/css/jquery.filer.css"/>
+    <link rel="stylesheet" href="/css/jquery.filer-dragdropbox-theme.css"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Laravel Telegram Chat Bot Tutorial and Live Demo. Send messages from browser to Telegram group.">
@@ -55,10 +56,10 @@
                                 @lang('localization.language') <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'en' ]) }}"> @lang('localization.en') </a>
-                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'uk' ]) }}"> @lang('localization.uk') </a>
-                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'pl' ]) }}"> @lang('localization.pl') </a>
-                                <a class="icon fa fa-arrow-right dropdown-item" href="{{ route('change-lang', ['lang' => 'ru' ]) }}"> @lang('localization.ru') </a>
+                                <a class="icon fa dropdown-item" href="{{ route('change-lang', ['lang' => 'en' ]) }}"> @lang('localization.en') </a>
+                                <a class="icon fa dropdown-item" href="{{ route('change-lang', ['lang' => 'uk' ]) }}"> @lang('localization.uk') </a>
+                                <a class="icon fa dropdown-item" href="{{ route('change-lang', ['lang' => 'pl' ]) }}"> @lang('localization.pl') </a>
+                                <a class="icon fa dropdown-item" href="{{ route('change-lang', ['lang' => 'ru' ]) }}"> @lang('localization.ru') </a>
                             </div>
                         </li>
                     </ul>
@@ -75,11 +76,15 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                   <a class="dropdown-item" href="{{route('create')}}">@lang('localization.createNew')</a>
+                                   <a class="dropdown-item" href="{{route('userAdv')}}">@lang('localization.MyAdv')</a>
+                                   <a class="dropdown-item" href="{{route('user')}}">@lang('localization.Profile')</a>
+                                   <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Logout
+                                        @lang('localization.logout')
                                     </a>
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -130,7 +135,9 @@
     <script src="{{ asset('js/jquery.poptrox.min.js') }}"></script>
     <script src="{{ asset('js/skel.min.js') }}"></script>
     <script src="{{ asset('js/util.js') }}"></script>
+    <script src="{{ asset('js/jquery.filer.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.js"></script>
+
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.js"></script>--}}
 </body>
 </html>

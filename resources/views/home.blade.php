@@ -2,10 +2,6 @@
 
 @section('content')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/ajax-loader.gif" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" href="" />
     <link rel="stylesheet" href="" />
     <link rel="stylesheet" href="" />
@@ -169,10 +165,10 @@
         </div>
         <div class="container">
             <ul class="icons">
-                <li><a href="{{route('about')}}"><span class="label">About</span></a></li>
-                <li><a href="{{route('faq')}}"><span class="label">FAQ</span></a></li>
-                <li><a href="{{route('bay')}}"><span class="label">How To Bay</span></a></li>
-                <li><a href="{{route('sell')}}"><span class="label">How To Sell</span></a></li>
+                <li><a href="{{route('about')}}"><span class="label">   @lang('localiation.about')</span></a></li>
+                <li><a href="{{route('faq')}}"><span class="label">     @lang('localization.FAQ')</span></a></li>
+                <li><a href="{{route('bay')}}"><span class="label">     @lang('localization.HowToBay')</span></a></li>
+                <li><a href="{{route('sell')}}"><span class="label">    @lang('localization.HowToSell')</span></a></li>
             </ul>
         </div>
     </footer>
@@ -186,8 +182,8 @@
             cssEase: 'linear'
         });
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    {{--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>--}}
+    {{--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>--}}
+    {{--<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>--}}
 
 @endsection()

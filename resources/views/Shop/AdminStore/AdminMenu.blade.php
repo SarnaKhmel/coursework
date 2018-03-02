@@ -6,13 +6,15 @@
             <div class="col-md-8">
                 <div class="card card-default">
                     <div class="card-header">Admin menu</div>
-                    <div class="card-body">
 
+                    <div class="card-body">
                         <div class="form-group row">
-                                <button></button>
-                            <div class="col-md-6">
-                                <button></button>
-                            </div>
+                            <a class="btn btn-primary "  href="{{url('/adminUsers')}}">     Table users</a>
+                            <a class="btn btn-primary "  href="{{route('adminUserAdv')}}">   Table users adv</a>
+                            <a class="btn btn-primary "  href="{{route('adminShopAdv')}}">   Table shop adv</a>
+                            <a class="btn btn-primary "  href="{{route('adminCreate')}}">    Create adv</a>
+                            <a class="btn btn-primary "  href="{{route('adminQuestions')}}"> Table questions</a>
+
                         </div>
 
                     </div>
