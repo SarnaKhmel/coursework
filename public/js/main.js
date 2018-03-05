@@ -116,34 +116,7 @@ $(document).ready(function(){
 	})
 });
 
-/*
-$('.files-label input[type="file"]').on('change', function(input){
-    if(input.fales && input.files[0]){
-        var reader = new FileReader();
+$(document).ready(function() {
 
-        reader.onload = function (e){
-            $('#blah').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
+    $('.slick-my-img').slick();
 });
-/*
-function heandleFileSelect(evt){
-	var filesv = evt.target.files;
-	for(var i=0, f; f=files[i]; i++){
-
-		if(!f.type.math('image.*')){
-			continue;
-		}
-		var reader = new FileReader();
-		reader.onload = (function(theFile){
-			return function(e){
-				var span = document.createElement('span');
-				span.innerHTML = ['<img style="width:300; border-width:3px; border-style:solid; border-color:#000; margin:8px;" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
-                document.getElementById('list').insertBefore(span, null);
-			};
-		})(f);
-		reader.readAsDataURL(f);
-	}
-}
-document.getElementById('files').addEventListener('change', handleFileSelect, false);*/

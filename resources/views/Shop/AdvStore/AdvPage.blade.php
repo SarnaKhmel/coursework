@@ -1,9 +1,8 @@
 @extends('layouts.app')
 @section('content')
     {{--<link rel="stylesheet" href="/css/lazy-load.css" />--}}
-    {{--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>--}}
-    {{--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>--}}
-
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -21,15 +20,16 @@
                                     <div class="ct-slick-homepage" data-arrows="true" data-autoplay="true">
 
                                         @foreach( json_decode($prod['images']) as $image)
-                                                 <div class="ct-header tablex">
+                                                 <div class="slick-my-img slick-list draggable">
                                                      <img src="{{asset('/pictures/'.$image)}}" style="max-width: 700px">
                                                      <hr>
-                                                     <div class="clr">
-                                                         {{$prod['subscribe']}}
-                                                     </div>
+
                                                      <hr>
                                                  </div>
                                     @endforeach
+                                        <div class="clr">
+                                            {{$prod['subscribe']}}
+                                        </div>
 
                                </div>
                              </div>
@@ -108,12 +108,7 @@
         </footer>
 
         <!-- Scripts -->
-    {{--<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>--}}
-    <script src="/public/js/jquery.min.js"></script>
-    <script src="/public/js/jquery.poptrox.min.js"></script>
-    <script src="/public/js/skel.min.js"></script>
-    <script src="/public/js/util.js"></script>
-    <script src="/public/js/main.js"></script>
+
     {{--<script src="{{ asset('js/lazy-load.js') }}"></script>--}}
 
 

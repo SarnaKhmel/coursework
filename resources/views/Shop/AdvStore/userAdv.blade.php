@@ -42,9 +42,6 @@
                                         <div class="col-sm-3 pull-right">
                                           <a class="btn btn-primary icon fa-ambulance"  href="{{route('edit-prod',['id'=> $returnProdInfo['id']])}}"> More info</a>
                                           <a  class=" btn btn-danger icon fa-remove " href="{{ route('delete-prod', ['id' => $returnProdInfo['id']]) }}">Delete</a>
-
-
-
                                         </div>
                                     </div>
                                 </div>

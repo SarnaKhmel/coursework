@@ -38,53 +38,70 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                                 <ul class="nav navbar-nav trending-menu">
-                                    <li ><a class="week" href="{{url('/')}}">News:</a></li>
-                                    <li><a href="http://rusty.com">Transport</a></li>
-                                    <li><a href="http://rusty.com">Apartment </a></li>
-                                    <li><a href="http://rusty.com">Clothing & footwear</a></li>
-                                    <li><a href="http://rusty.com">Toys</a></li>
-                                    <li><a href="#">Free</a></li>
-                                    <li><a href="#">Animals</a></li>
-                                    <li><a class="week" href="{{ url('/userAdv') }}">My shop</a></li>
-                                    <li><a class="week" href="{{ url('/create') }}">Start sell </a></li>
 
-                                    <a  class=" week dropdown-toggle pull-right" data-toggle="dropdown">
-                                        Location <span id="search_concept2"></span>
-                                    </a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Cherkasy Oblast</a></li>
-                                        <li><a href="#">Chernihiv Oblast</a></li>
-                                        <li><a href="#">Chernivtsi Oblast</a></li>
-                                        <li><a href="#">Dnipropetrovsk Oblast </a></li>
-                                        <li><a href="#">Donetsk Oblast</a></li>
-                                        <li><a href="#">Ivano-Frankivsk Oblast</a></li>
-                                        <li><a href="#">Kharkiv Oblast</a></li>
-                                        <li><a href="#">Kherson Oblast </a></li>
-                                        <li><a href="#">Khmelnytskyi Oblast  </a></li>
-                                        <li><a href="#"><strong>Kiev Oblast</strong></a></li>
-                                        <li><a href="#">Kirovohrad Oblast</a></li>
-                                        <li><a href="#">Luhansk Oblast</a></li>
-                                        <li><a href="#">Lviv Oblast </a></li>
-                                        <li><a href="#">Mykolaiv Oblast </a></li>
-                                        <li><a href="#">Odessa Oblast </a></li>
-                                        <li><a href="#">Poltava Oblast </a></li>
-                                        <li><a href="#">Rivne Oblast </a></li>
-                                        <li><a href="#">Sumy Oblast  </a></li>
-                                        <li><a href="#">Ternopil Oblast< </a></li>
-                                        <li><a href="#">Vinnytsia Oblast  </a></li>
-                                        <li><a href="#">Volyn Oblast< </a></li>
-                                        <li><a href="#">Zakarpattia Oblast </a></li>
-                                        <li><a href="#">Zaporizhia Oblast </a></li>
-                                        <li><a href="#">Zhytomyr Oblast  </a></li>
-                                        <li><a href="#">Kryme</a>
-                                        <li class="divider"></li>
-                                        <li><a href="#all">Anything</a></li>
+
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item dropdown">
+                                            <a class="btn b nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                @lang('localization.Category') <span class="caret"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                                @foreach( $dataAllCategory as $Category)
+
+                                                    <a class="icon fa dropdown-item" href="{{route('filter-category', ['id' => $Category['id']])}}">
+                                                        <span class="text">{{$Category['category']}}</span>
+                                                    </a>
+
+                                                @endforeach()
+                                            </div>
+                                        </li>
                                     </ul>
-                                    <input type="hidden" name="search_param" value="all" id="search_param">
+
+
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item dropdown">
+                                            <a class="btn b nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                @lang('localization.Category') <span class="caret"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                                <a href="#">Cherkasy Oblast</a> <br>
+                                                <a href="#">Chernihiv Oblast</a> <br>
+                                                <a href="#">Chernivtsi Oblast</a>
+                                                <a href="#">Dnipropetrovsk Oblast </a>
+                                                <a href="#">Donetsk Oblast</a>
+                                                <a href="#">Ivano-Frankivsk Oblast</a>
+                                                <a href="#">Kharkiv Oblast</a>
+                                                <a href="#">Kherson Oblast </a>
+                                                <a href="#">Khmelnytskyi Oblast  </a>
+                                                <a href="#"><strong>Kiev Oblast</strong></a>
+                                                <a href="#">Kirovohrad Oblast</a>
+                                                <a href="#">Luhansk Oblast</a>
+                                                <a href="#">Lviv Oblast </a>
+                                                <a href="#">Mykolaiv Oblast </a>
+                                                <a href="#">Odessa Oblast </a>
+                                                <a href="#">Poltava Oblast </a>
+                                                <a href="#">Rivne Oblast </a>
+                                                <a href="#">Sumy Oblast  </a>
+                                                <a href="#">Ternopil Oblast< </a>
+                                                <a href="#">Vinnytsia Oblast  </a>
+                                                <a href="#">Volyn Oblast< </a>
+                                                <a href="#">Zakarpattia Oblast </a>
+                                                <a href="#">Zaporizhia Oblast </a>
+                                                <a href="#">Zhytomyr Oblast  </a>
+                                                <a href="#">Kryme</a>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+
+
+
 
                                 </ul>
-                            </div><!-- end navbar-collapse -->
-                        </div><!-- end container-->
+                            </div>
+                        </div>
                     </nav>
                 </div>
 

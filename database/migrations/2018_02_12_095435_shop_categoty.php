@@ -15,8 +15,12 @@ class ShopCategoty extends Migration
     {
 
         Schema::create('category', function (Blueprint $table) {
-            $table->increments('id_category');
-            $table->string('category');
+            $table->increments('id');
+            $table->string('category')->nullable();
+            $table->string('subscribe')->nullable();
+
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

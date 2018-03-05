@@ -65,6 +65,13 @@ Route::group(
         Route::get('/adminUsers', 'AdminController@adminUsers')->name('adminUsers');
         Route::get('/adminCreate', 'AdminController@showAdminCreate')->name('adminCreate');
 
-});
+        Route::get('/category', 'CategoryController@showAdminCategoty')->name('Category');
+        Route::post('/createCategory', ['as' => 'category-save', 'uses' => 'CategoryController@createNewCategory']);
+        Route::any('/deleteCategory/{id}',['as' => 'delete-category', 'uses' => 'CategoryController@deleteCategory']);
+
+//Filter
+        Route::get('/filter/{id}', ['as' => 'filter-category', 'uses' => 'CategoryController@filterCategory']);
+
+    });
 
 

@@ -23,6 +23,7 @@ class UsersProductsList extends Migration
             $table->string('phone')->nullable();
             $table->integer('price')->nullable();
             $table->string('image')->nullable();
+            $table->integer('id_category')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

@@ -15,7 +15,10 @@ class ShopLocation extends Migration
     {
         Schema::create('location', function (Blueprint $table) {
             $table->increments('id_location');
-            $table->string('location');
+            $table->string('location')->nullable();
+
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
