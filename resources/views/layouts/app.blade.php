@@ -78,7 +78,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                    <a class="dropdown-item" href="{{route('create')}}">@lang('localization.createNew')</a>
                                    <a class="dropdown-item" href="{{route('userAdv')}}">@lang('localization.MyAdv')</a>
-                                   <a class="dropdown-item" href="{{route('user')}}">@lang('localization.Profile')</a>
+                                   <a class="dropdown-item" href="{{route('user')}}">@lang('localizatio n.Profile')</a>
                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -137,12 +137,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 
     <script src="{{ asset('js/app.js') }}"></script>
-    {{--<script src="{{ asset('js/jquery.min.js') }}"></script>--}}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery.poptrox.min.js') }}"></script>
     <script src="{{ asset('js/skel.min.js') }}"></script>
     <script src="{{ asset('js/util.js') }}"></script>
     <script src="{{ asset('js/jquery.filer.js') }}"></script>
-    {{--<script src="{{ asset('js/slick_my.js') }}"></script>--}}
+{{--    <script src="{{ asset('js/slick_my.js') }}"></script>--}}
     <script src="{{ asset('js/main.js') }}"></script>
 
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.js"></script>--}}

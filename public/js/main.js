@@ -44,12 +44,6 @@
 
 })(jQuery);
 
-// $(document).ready(function(){
-//     $('.ct-slick-homepage').slick({
-//         lazyLoad: 'ondemand',
-//     });
-// });
-
 $(document).ready(function(){
 	$('.drop-input').filer({
         limit: null,
@@ -116,7 +110,3 @@ $(document).ready(function(){
 	})
 });
 
-$(document).ready(function() {
-
-    $('.slick-my-img').slick();
-});

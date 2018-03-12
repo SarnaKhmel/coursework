@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/fortest.css" />
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="container">
-
+    <style>
+        .mySlides {display:none;}
+    </style>
 
     <div class="container">
         <div class="row">
@@ -50,7 +52,7 @@
                                                 @foreach( $dataAllCategory as $Category)
 
                                                     <a class="icon fa dropdown-item" href="{{route('filter-category', ['id' => $Category['id']])}}">
-                                                        <span class="text">{{$Category['category']}}</span>
+                                                        <span class="text" >{{$Category['category']}}</span>
                                                     </a>
 
                                                 @endforeach()
@@ -134,17 +136,22 @@
                     </div>
 
                     <div class="card-body">
-                        @foreach( $dataAllProd as $returnProdInfo)
+                        @foreach( $dataAllProd as $key => $returnProdInfo)
                             <div class="panel panel-body">
 
                                     <div class="form-group row">
                                         <div class="col-sm-4">
                                          <span class="image">
+                                             <div class="w3-content w3-section" style="max-width:500px">
                                                   @foreach( json_decode($returnProdInfo['images']) as $image)
                                                    <div>
-                                                  <img src="{{asset('/pictures/'.$image)}}" style="max-width: 150px">
+                                                       <ul>
+                                                           <img class="mySlides-{{$key}}" src="{{asset('/pictures/'.$image)}}" style="max-width: 150px">
+                                                       </ul>
                                                    </div>
                                                   @endforeach
+                                             </div>
+
                                                </span>
                                         </div>
                                         <div class="col-sm-3">
@@ -161,6 +168,22 @@
                             </div>
 
                         @endforeach
+                            <script>
+                                var myIndex = 0;
+                                carousel();
+
+                                function carousel() {
+                                    var i;
+                                    var x = document.getElementsByClassName("mySlides-0");
+                                    for (i = 0; i < x.length; i++) {
+                                        x[i].style.display = "none";
+                                    }
+                                    myIndex++;
+                                    if (myIndex > x.length) {myIndex = 1}
+                                    x[myIndex-1].style.display = "block";
+                                    setTimeout(carousel, 2500);
+                                }
+                            </script>
                     </div>
 
                     </div>

@@ -15,7 +15,12 @@ Route::group(
             return view('welcome');
         });
 
-        // User store
+
+// OAuth Routes
+        Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+        Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+// User store
         Route::get('/user', 'UserController@showUser')->name('user');
         Route::post('/updateUserInfo', ['as' => 'user-update', 'uses' => 'UserController@updateUserInfo']);
 

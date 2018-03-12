@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <link rel="stylesheet" type="text/css" href="">
+    {{--<link rel="stylesheet" type="text/css" href="">--}}
 
     <div class="container">
         <div class="row justify-content-center">
@@ -22,7 +22,7 @@
                                     <input id="name" name="name" type="text"  >
                                 </div>
                             </div>
-                            <br>
+                            {{--<br>--}}
                             <!--      <div class="form-group row">
                               <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
@@ -41,6 +41,20 @@
                               </div>
                           </div>
                           <br> -->
+                            <br>
+                            <div class="form-group row">
+                                <label for="category" class="col-md-4 col-form-label text-md-right">Category</label>
+
+                                <div class="col-md-6">
+                                    <select name="category">
+                                        @foreach( $dataCategory as $Category)
+                                        <option value="{{$Category['id']}}">{{$Category['category']}}</option>
+                                        @endforeach()
+
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
                             <div class="form-group row">
                                 <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
 
