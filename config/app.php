@@ -157,7 +157,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -225,7 +225,6 @@ return [
         'Image' => 'Intervention\Image\Facades\Image',
 
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
-
     ],
 
 ];
